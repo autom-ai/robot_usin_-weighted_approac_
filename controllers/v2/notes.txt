@@ -1,0 +1,13 @@
+The code is written in Python and its purpose is to control a Khepera2 robot in a simulation environment using the Webots platform. The robot's movement is controlled through an MQTT client that subscribes to a "move" topic and receives speed commands in JSON format. The robot's sensors are published on a "sensors" topic in JSON format.
+
+The code starts by importing necessary libraries such as "Robot" from the "controller" module, "paho" MQTT client and "json". Then, an instance of the robot is created.
+
+The next section of the code contains several functions that initialize different aspects of the robot, such as its motor, distance sensors (using the Braitenberg algorithm), and light sensors. Another function initializes the MQTT client, connects it to a local broker, subscribes to the "move" topic, and sets a callback function to execute when a message is received.
+
+The "move" function sets the velocity of the left and right motors of the robot based on the values in the "speed" list.
+
+The "publish_sensors" function retrieves the values from the distance and light sensors, creates a list with them, and publishes the values to the "sensors" topic.
+
+The "on_message" function is called when the MQTT client receives a message on the "move" topic. It sets the value of the "speed" list based on the received JSON message.
+
+The "if name == "main":" section of the code calls the necessary initialization functions and enters an infinite loop. In each iteration of the loop, the current values of the robot's sensors are published, the "move" function is called to set the motor velocities, and the MQTT client is kept running by calling its "loop" function.

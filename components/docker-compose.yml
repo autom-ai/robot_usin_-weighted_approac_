@@ -1,0 +1,32 @@
+# Use version 3 of the Docker Compose specification
+version: "3"
+
+# Define three services: light_seeking, obstacle_avoidance, and coordination
+services:
+  light_seeking:
+    # Build the image from the Dockerfile in the light_seeking directory
+    build: ./light_seeking
+    # Assign the name of the image to be created for this service
+    image: khepera2_light_seeking
+    # Run the service in the same network as the host machine
+    network_mode: host
+
+  obstacle_avoidance:
+    # Build the image from the Dockerfile in the obstacle_avoidance directory
+    build: ./obstacle_avoidance
+    # Assign the name of the image to be created for this service
+    image: khepera2_obstacle_avoidance
+    # Run the service in the same network as the host machine
+    network_mode: host
+
+  coordination:
+    # Build the image from the Dockerfile in the coordination directory
+    build: ./coordination
+    # Assign the name of the image to be created for this service
+    image: khepera2_coordination
+    # Run the service in the same network as the host machine
+    network_mode: host
+    # Define the dependencies for this service (i.e., light_seeking and obstacle_avoidance services)
+    depends_on:
+      - light_seeking
+      - obstacle_avoidance

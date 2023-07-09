@@ -1,0 +1,25 @@
+Coordinating behaviors of a robot using weighted approach
+
+As a team, we decided to implement a coordination system for our robot based on weighted behaviors. We assigned a weight to each behavior, which helped us prioritize them and manage their execution. The weighted approach allowed us to maintain a certain degree of flexibility in our system, as we could modify the weights of the behaviors as needed.
+
+The Braitenberg algorithm was one of the behaviors we implemented, which enabled our robot to detect obstacles and avoid them. However, we also wanted our robot to search for light sources, which is where the weighted approach came in handy. By assigning a higher weight to the light-seeking behavior, we ensured that the robot would prioritize this behavior over obstacle avoidance, unless it detected an obstacle in its path, in which case it would stop searching for light and focus on avoiding the obstacle.
+
+Integrating a veto system
+
+To further optimize our system, we decided to implement a veto system. This system ensured that the robot would prioritize the Braitenberg algorithm over light-seeking behavior if it detected an obstacle. However, as soon as the obstacle was no longer detected, the robot would switch back to searching for light sources.
+
+Setting a threshold for light intensity
+
+We also set a predefined threshold for the maximum light intensity that the robot could detect. Once the light intensity dropped below this threshold, the robot would stop searching for light and focus on obstacle avoidance. This helped us ensure that the robot did not waste time searching for light when it was not there, as it would automatically switch to obstacle avoidance mode.
+
+Modular and generic coordination file
+
+To minimize the effort required when adding new behaviors to our robot, we designed a modular and generic coordination file. This allowed us to easily add new behaviors without having to make too many modifications to the existing code.
+
+Challenges with MQTT when migrating to Docker
+
+During our migration to Docker, we realized that the MQTT communication protocol we were using might not be the most suitable choice for our system. When the simulation speed was too high, the communication messages failed to keep up, resulting in delayed execution of the robot's commands. This caused the robot to behave unexpectedly, which was not ideal.
+
+
+
+

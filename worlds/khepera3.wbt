@@ -1,0 +1,102 @@
+#VRML_SIM R2023a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/factory/containers/protos/WoodenBox.proto"
+EXTERNPROTO "../protos/Khepera2.proto"
+
+WorldInfo {
+  info [
+    "The model of the Khepera III robot"
+  ]
+  title "Khepera III"
+  basicTimeStep 16
+  contactProperties [
+    ContactProperties {
+      material1 "wheel"
+      coulombFriction [
+        0.45
+      ]
+    }
+    ContactProperties {
+      material1 "body"
+      coulombFriction [
+        0.1
+      ]
+    }
+  ]
+}
+Viewpoint {
+  orientation 0.029313092523195954 0.9981822772825163 -0.05265818004656407 1.0173461039908045
+  position -1.7284745172805962 0.10221728751229629 2.582413536565528
+  follow "Khepera II"
+  followType "None"
+  followSmoothness 0
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  rotation 0 1 0 0
+  floorSize 2 2
+}
+WoodenBox {
+  translation -0.2 -0.683174 0.05
+  rotation 0.940554832051147 0.240163077829669 0.240163077829669 1.632043330248321
+  size 0.1 0.1 0.1
+}
+WoodenBox {
+  translation -0.75 0.35 0.05
+  rotation -0.675244449310683 0.521557731068725 0.521557731068725 4.329427817464676
+  name "wooden box(1)"
+  size 0.1 0.1 0.1
+}
+WoodenBox {
+  translation 0.5 -0.35471 0.05
+  rotation -0.820542997539208 0.404171491566001 0.404171491566001 4.515877143482041
+  name "wooden box(2)"
+  size 0.1 0.1 0.1
+}
+WoodenBox {
+  translation -0.3 0.36 0.05
+  rotation -0.820542997539208 0.404171491566001 0.404171491566001 4.515877143482041
+  name "wooden box(3)"
+  size 0.1 0.1 0.1
+}
+WoodenBox {
+  translation -0.65 -0.66 0.05
+  rotation -0.820542997539208 0.404171491566001 0.404171491566001 4.515877143482041
+  name "wooden box(4)"
+  size 0.1 0.1 0.1
+}
+Khepera2 {
+  hidden position_0_0 17124.436091289022
+  hidden position_0_1 21458.176212625825
+  hidden rotation_1 0.3985398317543134 -0.3985402332545709 -0.8260337069288614 1.7607631354867213
+  hidden rotation_2 -0.3753126477009128 0.3753129198678996 0.8475143825658429 4.547690664160207
+  translation 0.7075415363426825 -0.876790692381095 0
+  rotation 0 0 1 576.6840604176986
+  controller "v2"
+}
+DEF LAMP Solid {
+  translation -0.560002 -0.56 0.035
+  rotation 0 0 -1 1.570795
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.8 0.8 0.8
+        roughness 1
+        metalness 0
+        emissiveColor 1 1 1
+      }
+      geometry Sphere {
+        radius 0.01
+      }
+    }
+    PointLight {
+      attenuation 0 0 3
+    }
+  ]
+}

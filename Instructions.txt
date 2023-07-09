@@ -1,0 +1,7 @@
+1.Launch Webots.
+2. Select "File" then "Open world".
+3. Open the "khepera3.wbt" world file.
+4. Select the Khepera2 controller.
+5. Choose version 2.
+6. Run the command "mosquitto -p 1880" from the "components" folder.
+7. Run the command "docker-compose up -d" from the "components" folder.

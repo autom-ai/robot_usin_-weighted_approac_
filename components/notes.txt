@@ -1,0 +1,11 @@
+The yml file is a docker-compose file that defines three services: light_seeking, obstacle_avoidance, and coordination.
+
+light_seeking: This service is built from the Dockerfile located in the light_seeking directory. It has the image name khepera2_light_seeking. The network_mode is set to host which means that the container shares the network namespace with the host. This is useful when we want the container to use the host's network stack instead of its own. This service does not depend on any other service.
+
+obstacle_avoidance: This service is built from the Dockerfile located in the obstacle_avoidance directory. It has the image name khepera2_obstacle_avoidance. The network_mode is set to host which means that the container shares the network namespace with the host. This service does not depend on any other service.
+
+coordination: This service is built from the Dockerfile located in the coordination directory. It has the image name khepera2_coordination. The network_mode is set to host which means that the container shares the network namespace with the host. This service depends on the light_seeking and obstacle_avoidance services.
+
+The depends_on keyword specifies the dependencies between services. In this case, the coordination service depends on the light_seeking and obstacle_avoidance services. This means that before the coordination service starts, the light_seeking and obstacle_avoidance services must be started first.
+
+This docker-compose file allows you to easily run multiple services as containers and manage their dependencies. When you run docker-compose up, it will build and start all the services defined in the file.

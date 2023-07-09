@@ -1,0 +1,10 @@
+This is a Python program that uses the Webots simulation environment to simulate the behavior of a two-wheeled robot equipped with multiple sensors. The program defines a number of helper functions and then sets up an infinite loop that repeatedly executes the following steps:
+
+	1.Reads the sensor data from the distance and light sensors attached to the robot.
+	2. Uses the data to calculate the robot's movement speed.
+	3. Sets the speed of the robot's left and right wheels based on the calculated speed.
+	4. The robot's movement speed is calculated using two different algorithms, depending on the sensor data received:
+
+Wall avoidance algorithm: This algorithm calculates a movement speed that tries to keep the robot away from any nearby walls or obstacles. It does this by using the data from the robot's distance sensors to determine the distance to nearby walls and obstacles, and then calculating a speed that moves the robot away from these obstacles.
+Light following algorithm: This algorithm calculates a movement speed that tries to move the robot towards a nearby light source. It does this by using the data from the robot's light sensors to determine the direction and intensity of any nearby light sources, and then calculating a speed that moves the robot towards the brightest light source.
+The program also defines a number of constants and matrices that are used in the algorithms, such as the maximum movement speed of the robot, the distance and light matrices that are used to calculate the movement speed, and the threshold for detecting a light source.

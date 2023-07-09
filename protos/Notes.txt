@@ -1,0 +1,7 @@
+This is a VRML (Virtual Reality Modeling Language) file, which is used to describe 3D scenes for virtual reality applications. It defines a PROTO (protocol) named Khepera2, which is used to create a robot model.
+
+The Khepera2 protocol includes several fields, such as translation, rotation, name, controller, supervisor, etc. Each field is associated with a default value and can be modified when the protocol is used to create a robot instance. For example, the translation field specifies the position of the robot in 3D space, while the controller field specifies the name of the controller program that will control the robot's behavior.
+
+The Khepera2 protocol also defines the robot's appearance and geometry. In this case, the robot is represented by an IndexedFaceSet geometry, which consists of a set of vertices and faces. The robot's appearance is defined by a PBRAppearance, which specifies its metalness and roughness.
+
+Overall, this VRML file is used to define a 3D model of the Khepera II robot, which can be used in virtual reality applications. The robot's appearance and behavior can be modified by changing the values of the fields in the Khepera2 protocol.
